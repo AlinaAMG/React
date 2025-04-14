@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width:80%;
+    margin:20px auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title{
+    padding:50px;
+    color:#fff;
+    background-color:#212121;
+    text-align: center;
+    font-size:36px;
+    
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.quote{
+    width:60%;
+    margin:20px auto;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color:#333;
+    height:15vh;
 }
-
-.App-link {
-  color: #61dafb;
+.quote-content{
+    margin:60px 0 10px 0;
+    
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.author{
+   font-weight: 600;
+}
+.quote-btn{
+    padding:10px;
+    background-color: orange;
+    color:#fff;
+    font-size:22px;
+    margin-top:70px;
+    border: none;
+    font-weight: 600;
+    width:20%;
+    cursor:pointer;
+    box-shadow: 4px 4px 6px rgba(0,0,0,0.8);
+  
+}
+.quote-btn:hover{
+    transform: scale(1.05);
+    background-color:rgb(244, 177, 55);
 }
