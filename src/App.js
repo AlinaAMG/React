@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import MessageDetails from './components/MessageDetails';
+import Messages from './components/Messages';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LocalMessagesDetails from './components/LocalMessages';
+
+ import Header from "./components/Header";
+ import Footer from "./components/Footer";
+import NotFound from './components/NotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+      <Header/>
+        <Routes>
+          
+          
+          <Route path="/" element={<Messages />} />
+          <Route path="/message/:id" element={<MessageDetails />} />
+          <Route path="/local-message/:id" element={<LocalMessagesDetails />} />
+
+
+          <Route path="/*" element={<NotFound/>}/>
+
+        </Routes>
+        <Footer/>
+      </div>
+    </BrowserRouter>
   );
 }
 
