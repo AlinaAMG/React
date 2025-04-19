@@ -90,3 +90,58 @@ body{
    text-align: center;
    margin:60px 0 200px 0;
  }
+
+ .login-registration-form{
+   display:flex;
+   flex-direction:column;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(231, 228, 228);
+   border-radius: 10px;
+   box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+   width:40%;
+   min-height:50vh;
+   margin:50px auto;
+
+ }
+ .login-registration-form input,
+ .login-registration-form button{
+   padding:10px;
+   margin:10px;
+   width:80%;
+   font-size:20px;
+ }
+ .login-registration-form button{
+   cursor:pointer;
+   background-color:rgb(38, 38, 109);
+   color:#fff;
+   border:none;
+ }
+ .login-registration-form button:hover{
+   background-color: rgb(59, 48, 130);
+   transform: scale(1.02);
+ }
+ .login-registration-form.registration{
+   height:70vh;
+ }
+ .link{
+   font-size:18px;
+   margin:30px 0 30px 0
+ }
+ .title{
+   margin:30px 0 40px 0;
+ }
+ .logout{
+
+ color:blue;
+ font-size:20px;
+ 
+ padding:20px;
+ text-decoration: none;
+ margin:30px;
+
+ }
+ .welcome{
+   font-size:30px;
+   margin:30px;
+ }
