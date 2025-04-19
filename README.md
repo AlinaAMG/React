@@ -1,18 +1,41 @@
-De Time Line App is een webapplicatie waarmee gebruikers berichten kunnen plaatsen, reacties kunnen toevoegen aan berichten en de berichten met reacties kunnen opslaan in de backend (via een API). Gebruikers kunnen berichten en reacties bekijken, toevoegen en deze interactie wordt gesynchroniseerd met de backend.
+📘 Time Line App
 
-Functionaliteiten
-Berichten Toevoegen: Gebruikers kunnen berichten plaatsen.
+De Time Line App is een React-webapplicatie waarmee gebruikers zich kunnen registreren, inloggen, berichten kunnen plaatsen, en reacties kunnen toevoegen. De authenticatie gebeurt volledig op de frontend (via localStorage), maar berichten en reacties worden opgeslagen in een backend via een API.
 
-Reacties Toevoegen: Gebruikers kunnen reacties toevoegen aan berichten.
+🚀 Functionaliteiten
 
-Backend Integratie: De app maakt verbinding met een backend API om berichten en reacties op te slaan en op te halen.
 
-Reacties Opslaan: Reacties worden opgeslagen in de backend en gekoppeld aan de juiste berichten.
+🔐 Registratie & Inloggen (Frontend-only)
+Gebruikers kunnen zich registreren en inloggen. De gebruikersgegevens en inlogstatus worden opgeslagen in localStorage.
 
-Technologieën
+
+📝 Berichten Toevoegen (met backend)
+Ingelogde gebruikers kunnen berichten aanmaken die via een API worden opgeslagen in de backend (MongoDB via Express).
+
+
+💬 Reacties Toevoegen (met backend)
+Gebruikers kunnen reacties toevoegen aan berichten, die ook via de API worden opgeslagen.
+
+
+💾 Data Persistentie
+
+Gebruikersdata: localStorage
+
+Berichten en reacties: opgeslagen in de backend-database
+
+
+🛠️ Technologieën
 Frontend: React
 
-Backend: Node.js (Express)
+State Management: React useState + useEffect
 
-Database: MongoDB (met Mongoose)
+Authenticatie: Alleen frontend via localStorage
 
+Backend: Node.js met Express
+
+Database: MongoDB via Mongoose
+
+📄 Opmerkingen
+Registratie en inloggen worden niet gevalideerd via de backend (dus geen echte tokens of sessies).
+
+De backend handelt wel de opslag van berichten en reacties af via RESTful API-routes.
