@@ -1,23 +1,51 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+
+import { BrowserRouter, Routes, Route } from 'react-router';
+
+import HomePage from './components/HomePage';
+import Members from './components/Members';
+import AboutMembers from './components/AboutMembers';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import PageNotFound from './components/PageNotFound';
 import './App.css';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState(() => {
+    const savedUser = localStorage.getItem('loggedInUser');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/members"
+            element={
+              <ProtectedRoute>
+                <Members onLogout={() => setLoggedInUser(null)} />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <AboutMembers
+                  user={loggedInUser}
+                  onLogout={() => setLoggedInUser(null)}
+                />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/*" element={<PageNotFound />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
